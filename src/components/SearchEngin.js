@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Search.css";
 import axios from "axios";
+import Loader from "react-animated-loader";
+
 function Search() {
   const [city, setCity] = useState("");
   const [descript, setDescript] = useState(false);
@@ -11,6 +13,7 @@ function Search() {
     setCity(event.target.value);
   }
   function displayTemp(response) {
+    console.log(response);
     setDescript(true);
     setWeather({
       temperature: Math.round(response.data.main.temp),
@@ -18,6 +21,7 @@ function Search() {
       humidity: response.data.main.humidity,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
+      cityName: response.data.name,
     });
   }
   function searchCity(event) {
@@ -33,11 +37,10 @@ function Search() {
         <div className="search">
           <form onSubmit={searchCity}>
             <input onChange={changeCity} type="search" />
-            <button type="submit">Search</button>
           </form>
         </div>
         <div className="show-temp">
-          <h3>{city}</h3>
+          <h3>{weather.cityName}</h3>
           <p>
             {weather.temperature}°{" "}
             <span>
@@ -61,8 +64,12 @@ function Search() {
       <div className="search">
         <form onSubmit={searchCity}>
           <input onChange={changeCity} type="search" />
-          <button type="submit">Search</button>
         </form>
+        <div className="show-temp">
+          <h3> Search For a City</h3>
+          <Loader />
+          <h3>To See The Forcast</h3>
+        </div>
       </div>
     );
   }
