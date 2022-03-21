@@ -41,10 +41,10 @@ function Search() {
           <p>
             {weather.temperature}°{" "}
             <span>
-              <a href="#">C</a>
+              <span>C</span>
             </span>{" "}
             <span>
-              | <a href="#">F</a>
+              | <span>F</span>
             </span>
           </p>
 
