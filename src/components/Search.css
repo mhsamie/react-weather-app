@@ -11,15 +11,20 @@
   height: 30px;
   width: 180px;
   border-radius: 15px;
-  border: 1px solid #ece929;
+  border: 1px solid #f7f31f;
+  background-color: #fcfcfc;
+
+  background-image: url("../search.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-indent: 30px;
+
+  transition: 0.3s;
 }
-.search button {
-  padding: 5px;
-  height: 30px;
-  border-radius: 15px;
-  background-color: #fdfa52;
-  border: 1px solid #fffc49;
+.search input:focus {
+  background-image: none;
 }
+
 .search input:focus {
   outline: none;
 }

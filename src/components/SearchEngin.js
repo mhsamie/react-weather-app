@@ -31,12 +31,17 @@ function Search() {
 
     axios.get(apiUrl).then(displayTemp);
   }
+
   if (descript) {
     return (
       <>
         <div className="search">
           <form onSubmit={searchCity}>
-            <input onChange={changeCity} type="search" />
+            <input
+              onChange={changeCity}
+              type="search"
+              placeholder="search again..."
+            />
           </form>
         </div>
         <div className="show-temp">
@@ -63,7 +68,7 @@ function Search() {
     return (
       <div className="search">
         <form onSubmit={searchCity}>
-          <input onChange={changeCity} type="search" />
+          <input onChange={changeCity} type="search" placeholder="search" />
         </form>
         <div className="show-temp">
           <h3> Search For a City</h3>
