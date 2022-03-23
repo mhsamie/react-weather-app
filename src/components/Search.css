@@ -28,9 +28,6 @@
 .search input:focus {
   outline: none;
 }
-.search button:hover {
-  background-color: #f8f7a0;
-}
 
 .show-temp {
   position: absolute;
@@ -69,4 +66,9 @@
   position: relative;
   top: -20px;
   font-size: small;
+}
+.weather-icon {
+  position: relative;
+  top: -54px;
+  height: 25px;
 }

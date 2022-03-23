@@ -4,6 +4,7 @@ import axios from "axios";
 import Loader from "react-animated-loader";
 import DateFormat from "./FormatedDate";
 import ConvertTemp from "./ConvertEngin";
+import WeatherIcon from "./icons";
 
 function Search() {
   const [city, setCity] = useState("");
@@ -19,7 +20,7 @@ function Search() {
       temperature: Math.round(response.data.main.temp),
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
       cityName: response.data.name,
 
@@ -55,7 +56,9 @@ function Search() {
           </h5>
 
           <ConvertTemp temp={weather.temperature} />
-
+          <div className="weather-icon">
+            <WeatherIcon code={weather.icon} />
+          </div>
           <div className="more-info">
             <p className="description">{weather.description}</p>
 
