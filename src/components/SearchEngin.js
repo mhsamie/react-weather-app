@@ -3,6 +3,8 @@ import "./Search.css";
 import axios from "axios";
 import Loader from "react-animated-loader";
 import DateFormat from "./FormatedDate";
+import ConvertTemp from "./ConvertEngin";
+
 function Search() {
   const [city, setCity] = useState("");
   const [descript, setDescript] = useState(false);
@@ -51,12 +53,9 @@ function Search() {
           <h5 className="date">
             <DateFormat time={weather.thedate} />
           </h5>
-          <p className="temp">
-            {weather.temperature}°{" "}
-            <span className="convert">
-              <span>C</span> | <span>F</span>
-            </span>
-          </p>
+
+          <ConvertTemp temp={weather.temperature} />
+
           <div className="more-info">
             <p className="description">{weather.description}</p>
 
