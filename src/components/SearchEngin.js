@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Search.css";
 import axios from "axios";
 import Loader from "react-animated-loader";
-import Date from "./Date";
+import DateFormat from "./FormatedDate";
 function Search() {
   const [city, setCity] = useState("");
   const [descript, setDescript] = useState(false);
@@ -13,7 +13,6 @@ function Search() {
     setCity(event.target.value);
   }
   function displayTemp(response) {
-    setDescript(true);
     setWeather({
       temperature: Math.round(response.data.main.temp),
       wind: response.data.wind.speed,
@@ -22,8 +21,9 @@ function Search() {
       description: response.data.weather[0].description,
       cityName: response.data.name,
 
-      date: new Date(response.data.dt * 1000),
+      thedate: new Date(response.data.dt * 1000),
     });
+    setDescript(true);
   }
   function searchCity(event) {
     event.preventDefault();
@@ -48,7 +48,7 @@ function Search() {
         <div className="show-temp">
           <h3>{weather.cityName}</h3>
           <h6>
-            <Date time={weather.date} />
+            <DateFormat time={weather.thedate} />
           </h6>
           <p>
             {weather.temperature}°{" "}
