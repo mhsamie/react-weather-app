@@ -31,6 +31,7 @@
 .search button:hover {
   background-color: #f8f7a0;
 }
+
 .show-temp {
   position: absolute;
   top: 120px;
@@ -45,4 +46,27 @@
   justify-content: space-between;
   align-items: center;
   color: #fff;
+}
+
+.date {
+  position: relative;
+  top: -30px;
+}
+.temp {
+  font-size: 32px;
+  position: relative;
+  top: -45px;
+  left: 8px;
+}
+.convert {
+  font-size: 12px;
+  position: relative;
+  top: -20px;
+}
+.more-info {
+  display: block;
+  text-align: center;
+  position: relative;
+  top: -20px;
+  font-size: small;
 }

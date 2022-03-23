@@ -45,23 +45,21 @@ function Search() {
             />
           </form>
         </div>
+
         <div className="show-temp">
           <h3>{weather.cityName}</h3>
-          <h6>
+          <h5 className="date">
             <DateFormat time={weather.thedate} />
-          </h6>
-          <p>
+          </h5>
+          <p className="temp">
             {weather.temperature}°{" "}
-            <span>
-              <span>C</span>
-            </span>{" "}
-            <span>
-              | <span>F</span>
+            <span className="convert">
+              <span>C</span> | <span>F</span>
             </span>
           </p>
+          <div className="more-info">
+            <p className="description">{weather.description}</p>
 
-          <p>{weather.description}</p>
-          <div>
             <p>wind speed: {weather.wind} km/h</p>
             <p>humidity: {weather.humidity}%</p>
           </div>
