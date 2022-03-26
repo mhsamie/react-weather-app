@@ -5,6 +5,7 @@ import Loader from "react-animated-loader";
 import DateFormat from "./FormatedDate";
 import ConvertTemp from "./ConvertEngin";
 import WeatherIcon from "./icons";
+import WeatherForcast from "./Forcast";
 
 function Search() {
   const [city, setCity] = useState("");
@@ -23,7 +24,7 @@ function Search() {
       icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
       cityName: response.data.name,
-
+      cordinate: response.data.coord,
       thedate: new Date(response.data.dt * 1000),
     });
     setDescript(true);
@@ -57,7 +58,7 @@ function Search() {
 
           <ConvertTemp temp={weather.temperature} />
           <div className="weather-icon">
-            <WeatherIcon code={weather.icon} />
+            <WeatherIcon code={weather.icon} size={60} />
           </div>
           <div className="more-info">
             <p className="description">{weather.description}</p>
@@ -65,6 +66,9 @@ function Search() {
             <p>wind speed: {weather.wind} km/h</p>
             <p>humidity: {weather.humidity}%</p>
           </div>
+        </div>
+        <div className="show-temp-forcast">
+          <WeatherForcast coord={weather.cordinate} size="30" />
         </div>
       </>
     );

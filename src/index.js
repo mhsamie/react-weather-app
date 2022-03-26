@@ -7,7 +7,6 @@ import Parent from "./components/Parent";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
     <Parent />
   </React.StrictMode>,
   document.getElementById("root")
