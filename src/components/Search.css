@@ -9,22 +9,20 @@
 .search input {
   padding: 5px;
   height: 30px;
-  width: 180px;
+  width: 220px;
   border-radius: 15px;
   border: 1px solid #f7f31f;
   background-color: #fcfcfc;
-
-  background-image: url("../search.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  text-indent: 30px;
-
+  position: relative;
+  text-indent: 24px;
   transition: 0.3s;
 }
-.search input:focus {
-  background-image: none;
+.search-icon img {
+  position: absolute;
+  width: 24px;
+  top: 2px;
+  margin: 1px 4px;
 }
-
 .search input:focus {
   outline: none;
 }

@@ -47,6 +47,12 @@ function Search() {
               type="search"
               placeholder="search again..."
             />
+            <div className="search-icon">
+              <img
+                src="http://bmbgk.ir/assets/images/search.svg"
+                alt="search"
+              />
+            </div>
           </form>
         </div>
 
@@ -77,6 +83,9 @@ function Search() {
       <div className="search">
         <form onSubmit={searchCity}>
           <input onChange={changeCity} type="search" placeholder="search" />
+          <div className="search-icon">
+            <img src="http://bmbgk.ir/assets/images/search.svg" alt="search" />
+          </div>
         </form>
         <div className="show-temp">
           <h3> Search For a City</h3>

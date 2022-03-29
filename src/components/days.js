@@ -15,23 +15,23 @@ function ForcastDays(props) {
     let date = new Date(props.data.dt * 1000);
     let day = date.getDay();
 
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sate"];
 
     return days[day];
   }
 
   return (
     <>
-      <span>{day()}</span>
-      <span>
+      <div>{day()}</div>
+      <div>
         <WeatherIcon code={props.data.weather[0].icon} size={30} />
-      </span>
-      <span>
+      </div>
+      <div>
         <span>
           <strong>{maxTemperature()}</strong>
         </span>{" "}
         <span>{minTemperature()}</span>
-      </span>
+      </div>
     </>
   );
 }
