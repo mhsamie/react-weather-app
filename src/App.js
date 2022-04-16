@@ -16,12 +16,7 @@ function App() {
   }
 
   function searchCity(event) {
-   
     event.preventDefault();
-<<<<<<< HEAD
-
-=======
->>>>>>> 7927e80bb5e27ad1f7ffb1f3ccf5d698a55ce343
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5ef53446dcb07ea2a0fb8ef5e317e310&units=metric`;
 
     axios.get(apiUrl).then((response) => {
@@ -40,7 +35,6 @@ function App() {
         getForcast(result.coord);
       }
     });
-   
   }
 
   const getForcast = (coord) => {
